@@ -6,5 +6,18 @@ const tileSize = 64;
 canvas.width = tileSize * 16;
 canvas.height = tileSize * 9
 
-c.fillStyle = "white";
-c.fillRect(0, 0, canvas.width, canvas.height);
+//Luodaan uusi pelaaja
+const player = new Player()
+
+//animaatio looppi
+//let bottom = y + 100;
+function animate() {
+    window.requestAnimationFrame(animate)
+    c.fillStyle = "white";
+    c.fillRect(0, 0, canvas.width, canvas.height);
+
+    player.draw()
+    player.update()
+}
+
+animate();
