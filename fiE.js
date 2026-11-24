@@ -16,6 +16,7 @@ function animate() {
     c.fillStyle = "white";
     c.fillRect(0, 0, canvas.width, canvas.height);
 
+    // kutsuu metodeja, jotka löytyy pelaajaluokasta
     player.draw()
     player.update()
 }
