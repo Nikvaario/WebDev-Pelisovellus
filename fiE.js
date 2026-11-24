@@ -2,7 +2,7 @@
 const canvas = document.querySelector("canvas");
 const c = canvas.getContext("2d");
 const tileSize = 64;
-
+// tileSize = palikkakoko
 canvas.width = tileSize * 16;
 canvas.height = tileSize * 9
 
