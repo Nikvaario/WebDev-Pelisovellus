@@ -5,11 +5,18 @@ class Player {
             x: 100,
             y: 100
         }
+
+        this.velocity = {
+            x: 0,
+            y: 0,
+        }
+
         this.width = 100;
         this.height = 100;
         this.sides = {
             bottom: this.position.y + this.height
         }
+        this.cravity = 1
     }
     // metodi jolla luodaan pelaajan ulkonäkö
     draw() {
@@ -18,10 +25,13 @@ class Player {
     }
 // Päivittää pelaajan sijaintia
     update() {
-        if (this.sides.bottom < canvas.height) {
-            this.position.y++
+        this.position.y += this.velocity.y
+
+        // pohjan päällä/yläpuolella
+        if (this.sides.bottom + this.velocity.y < canvas.height) {
+            this.velocity.y += this.cravity
             this.sides.bottom = this.position.y + this.height
-        }
+        } else this.velocity.y = 0
 
     }
 }
