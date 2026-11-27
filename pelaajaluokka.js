@@ -25,12 +25,13 @@ class Player {
     }
 // Päivittää pelaajan sijaintia
     update() {
+        this.position.x += this.velocity.x
         this.position.y += this.velocity.y
+        this.sides.bottom = this.position.y + this.height
 
         // pohjan päällä/yläpuolella
         if (this.sides.bottom + this.velocity.y < canvas.height) {
             this.velocity.y += this.cravity
-            this.sides.bottom = this.position.y + this.height
         } else this.velocity.y = 0
 
     }
