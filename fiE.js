@@ -6,6 +6,14 @@ const tileSize = 64;
 canvas.width = tileSize * 16;
 canvas.height = tileSize * 9
 
+const level1Background = new Sprite({
+    position: {
+        x: 0,
+        y: 0
+    },
+    imageSrc: './Assets/backgroundLevel1.png'
+})
+
 //Luodaan uusi pelaaja
 const player = new Player()
 
@@ -25,8 +33,7 @@ const keys = {
 //let bottom = y + 100;
 function animate() {
     window.requestAnimationFrame(animate)
-    c.fillStyle = "white";
-    c.fillRect(0, 0, canvas.width, canvas.height);
+    level1Background.draw();
 
     // Pelaajan nopeus
     player.velocity.x = 0

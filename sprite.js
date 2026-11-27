@@ -1,5 +1,4 @@
 // TODO: Tämä tiedosto menee Luokat kansioon, kun sellainen luodaan
-// TODO: Seuraava koodipätkä html dokumenttiin: <script src ="sprite.js" defer></script>
 
 class Sprite {
     constructor({position, imageSrc}) {
@@ -18,17 +17,3 @@ class Sprite {
         c.drawImage(this.image, this.position.x, this.position.y)
     }
 }
-
-// TODO: Kopioidaan seuraava koodipätkä fiE.js tiedostoon player muuttujan yläpuolelle:
-
-// Luodaan ensimmäisen tason taustakuva
-const level1Background = new Sprite({
-    position: {
-        x: 0,
-        y: 0
-    },
-    imageSrc: './Assets/backgroundLevel1.png'
-})
-
-// TODO: Poistetaan Animate funktiosta c.fillstyle ja c.fillRect, ja korvataan se seuraavalla koodipätkällä:
-level1Background.draw();
