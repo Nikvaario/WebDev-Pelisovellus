@@ -3,16 +3,16 @@
 
 class Sprite {
     constructor({position, imageSrc}) {
-        this.position = position;
-        this.image = new Image();
+        this.position = position; // Kuvan ankkurisijainti
+        this.image = new Image(); 
         this.image.onload = () => {
             this.loaded = true;
         }  
-        this.image.src = imageSrc;
+        this.image.src = imageSrc; // Kuvatiedosto
         this.loaded = false;
     }
 
-    // Piirtää kuvan näytölle, mikäli this.image.src muuttujassa viitattu tiedosto löytyy
+    // Piirtää kuvan näytölle, mikäli kuvaan viitattu tiedosto on ladattu
     draw() {
         if (!this.loaded) return
         c.drawImage(this.image, this.position.x, this.position.y)
